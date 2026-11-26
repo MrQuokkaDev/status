@@ -27,7 +27,7 @@ sites:
     port: 22
 
 status-website:
-  cname: status.mrquokka.com
+  cname: status.mrquokka.dev
   name: Mr Quokka Status
   introTitle: "Service status"
   introMessage: "Live status of our websites and servers."
