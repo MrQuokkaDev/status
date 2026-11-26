@@ -1,31 +1,43 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: MrQuokkaDev
+repo: status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  # --- Mr Quokka ---
+  - name: MrQuokka
+    url: https://mrquokka.dev
+  - name: Hanger
+    url: https://hanger.mrquokka.com/login
+  - name: DnD
+    url: https://dnd.mrquokka.com/login
+
+  # --- Clients ---
+  - name: Bob Buick
+    url: https://bobbuick.com.au
+  - name: Strait8
+    url: https://strait8.com
+  - name: TJ Bookkeeping
+    url: https://tjbookkeeping.com.au
+
+  # --- Servers ---
+  # The IP lives in a repo secret (VPS1_HOST) so the origin behind
+  # Cloudflare isn't published. Checks that SSH is reachable.
+  - name: VPS 1 (Sydney)
+    check: "tcp-ping"
+    url: $VPS1_HOST
+    port: 22
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.mrquokka.com
+  name: Mr Quokka Status
+  introTitle: "Service status"
+  introMessage: "Live status of our websites and servers."
   navbar:
     - title: Status
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Opens a GitHub issue when a site goes down and notifies via GitHub.
+# Add Slack/Discord/email/Telegram later: https://upptime.js.org/docs/notifications
+assignees:
+  - MrQuokkaDev
